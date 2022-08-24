@@ -27,9 +27,16 @@ body {
 		padding: 16px;
 		font-size: 1.8rem;
 
-		.current-input {
+		#current-input {
+			font-size: 2rem;
+			color: $previous-operand;
+			height: 40px;
+		}
+
+		#previous-input {
 			font-size: 1rem;
 			color: $previous-operand;
+			height: 20px;
 		}
 	}
 

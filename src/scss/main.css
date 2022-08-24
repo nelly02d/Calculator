@@ -31,9 +31,15 @@ body {
   padding: 16px;
   font-size: 1.8rem;
 }
-.app #display .current-input {
+.app #display #current-input {
+  font-size: 2rem;
+  color: #F6FEAA;
+  height: 40px;
+}
+.app #display #previous-input {
   font-size: 1rem;
   color: #F6FEAA;
+  height: 20px;
 }
 .app button {
   -webkit-appearance: none;

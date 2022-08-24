@@ -5,32 +5,33 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentInput: '',
-      result: ''
+      currInput: '',
+      prevInput: ''
     };
 
     this.handleDisplay = this.handleDisplay.bind(this);
   };
 
+  
+
   handleDisplay = (e) => {
     const value = e.target.textContent;
+    
+    if(value === '.' && this.state.currInput.includes('.')) return
 
     if (value === 'C') {
       this.setState({
-        currentInput: ''
+        currInput: ''
       })
     } else {
       this.setState(state => ({
-        currentInput: this.state.currentInput + value
+        currInput: this.state.currInput.toString() + value.toString()
       }));
     }
+  }
 
+  compute = () => {
     
-   
-//   handleCalculation = () => {
-    
-// ;  };
-
   }
 
   render() {
@@ -38,8 +39,8 @@ class App extends React.Component {
       <div className='app'>
         <div className='calculator'>
           <div id='display'>
-            <div id='previous-operand'></div>
-            <div id='current-input'>{ this.state.currentInput || 0 }</div>
+            <div id='previous-input'>{ this.state.prevInput }</div>
+            <div id='current-input'>{ this.state.currInput }</div>
           </div>
           <div className='operator'>
             <button id='clear' onClick={ this.handleDisplay }>C</button>
