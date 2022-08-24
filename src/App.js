@@ -16,7 +16,8 @@ class App extends React.Component {
 
   handleDisplay = (e) => {
     const value = e.target.textContent;
-    
+    const operand = ['+', '-', '/', '*'];
+
     if(value === '.' && this.state.currInput.includes('.')) return
 
     if (value === 'C') {
@@ -28,6 +29,18 @@ class App extends React.Component {
         currInput: this.state.currInput.toString() + value.toString()
       }));
     }
+
+    operand.forEach((operator, i) => {
+      if(value === operator) {
+        this.setState(state => ({
+          prevInput: this.state.currInput,
+          currInput:''
+        }))
+      }
+
+      
+    });
+
   }
 
   compute = () => {
