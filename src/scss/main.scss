@@ -42,7 +42,7 @@ body {
 
 	button {
 		appearance: none;
-		border: none;
+		border: 1px solid $border-color;
 		outline: none;
 		color: $output-color;
 		font-size: 2rem;
@@ -51,7 +51,7 @@ body {
 		transition: 0.4s;
 
 		&:hover {
-			opacity: 0.9;
+			background-color: rgba(0, 0, 0, 0.5);
 		}
 	}
 
@@ -67,6 +67,10 @@ body {
 		button {
 			flex: 1 1 0%;
 			background-color: $operator-color;
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
 		}
 	}
 
